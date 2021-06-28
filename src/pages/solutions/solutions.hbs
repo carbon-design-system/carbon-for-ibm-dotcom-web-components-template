@@ -1,0 +1,402 @@
+{{#> base }}
+
+  <div class="page-container">
+
+		<dds-table-of-contents>
+			<a name="1" data-title="Lead Space Block"></a>
+			<div class="bx--grid">
+				<div class="bx--row">
+						<dds-scroll-animations
+							animation="fade"
+							selector-targets="
+								dds-leadspace-block-heading,
+								dds-content-block-heading,
+								dds-content-block-copy,
+								dds-leadspace-block-media,
+								dds-link-list,
+								dds-leadspace-block-cta"
+							keep-animation="true">
+							<dds-leadspace-block>
+								<dds-leadspace-block-heading>Lead Space Block</dds-leadspace-block-heading>
+								<dds-leadspace-block-content>
+									<dds-content-block-heading>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</dds-content-block-heading>
+									<dds-content-block-copy>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dds-content-block-copy>
+
+									<dds-leadspace-block-media slot="media">
+										<dds-video-player-container video-id="1_9h94wo6b"></dds-video-player-container>
+									</dds-leadspace-block-media>
+
+									<dds-link-list type="end">
+										<dds-link-list-heading>Featured products</dds-link-list-heading>
+										<dds-link-list-item href="https://example.com">
+											IBM Cloud Continuous Delivery
+											<svg slot="icon" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
+												<path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+											</svg>
+										</dds-link-list-item>
+										<dds-link-list-item href="https://example.com">
+											UrbanCode
+											<svg slot="icon" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
+												<path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+											</svg>
+										</dds-link-list-item>
+										<dds-link-list-item href="https://example.com">
+											View all products
+											<svg slot="icon" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
+												<path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+											</svg>
+										</dds-link-list-item>
+									</dds-link-list>
+									<dds-leadspace-block-cta>
+										<dds-button-group-item href="www.ibm.com">
+											Contact sales
+											<svg slot="icon" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
+												<path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+											</svg>
+										</dds-button-group-item>
+									</dds-leadspace-block-cta>
+								</dds-leadspace-block-content>
+							</dds-leadspace-block>
+						</dds-scroll-animations>
+					</div>
+				</div>
+			<a name="2" data-title="Content Block Segmented"></a>
+			<div class="bx--grid">
+				<div class="bx--row">
+						<dds-scroll-animations
+							animation="slide-left"
+							selector-targets="
+								dds-content-block-heading,
+								dds-content-group-heading,
+								dds-content-item-copy,
+								dds-text-cta"
+							keep-animation="true">
+							<dds-content-block-segmented>
+								<dds-content-block-heading>Content Block Segmented</dds-content-block-heading>
+								<dds-content-block-segmented-item>
+									<dds-content-group-heading>A scelerisque purus semper eget duis at tellus.</dds-content-group-heading>
+									<dds-content-item-copy>Elementum nibh tellus molestie nunc non. Habitant morbi tristique senectus et netus et malesuada fames.</dds-content-item-copy>
+									<dds-text-cta slot='footer' cta-type='local' icon-placement='right' href='https://example.com'
+									>Lorem ipsum dolor sit
+									</dds-text-cta>
+								</dds-content-block-segmented-item>
+
+								<dds-content-block-segmented-item>
+									<dds-content-group-heading>A scelerisque purus semper eget duis at tellus.</dds-content-group-heading>
+									<dds-content-item-copy>Elementum nibh tellus molestie nunc non. Habitant morbi tristique senectus et netus et malesuada fames.</dds-content-item-copy>
+								</dds-content-block-segmented-item>
+
+								<dds-content-block-segmented-item>
+									<dds-content-group-heading>A scelerisque purus semper eget duis at tellus.</dds-content-group-heading>
+									<dds-content-item-copy>Elementum nibh tellus molestie nunc non. Habitant morbi tristique senectus et netus et malesuada fames.</dds-content-item-copy>
+									<dds-text-cta slot='footer' cta-type='local' icon-placement='right' href='https://example.com'
+									>Lorem ipsum dolor sit
+									</dds-text-cta>
+								</dds-content-block-segmented-item>
+
+								<dds-content-block-segmented-item>
+									<dds-content-group-heading>A scelerisque purus semper eget duis at tellus.</dds-content-group-heading>
+									<dds-content-item-copy>Elementum nibh tellus molestie nunc non. Habitant morbi tristique senectus et netus et malesuada fames.</dds-content-item-copy>
+								</dds-content-block-segmented-item>
+							</dds-content-block-segmented>
+						</dds-scroll-animations>
+				</div>
+			</div>
+
+			<dds-scroll-animations
+				animation="slide-up-left"
+				selector-targets="
+					dds-feature-card-block-large"
+				keep-animation="true">
+				<dds-feature-card-block-large href='https://example.com'>
+					<dds-image slot='image' alt='Image alt text' default-src='../assets/images/card-sample-5.jpg'>
+					</dds-image>
+					<dds-card-eyebrow>scelerisque purus</dds-card-eyebrow>
+					<dds-card-heading>Feature Card Block Large</dds-card-heading>
+					<p>Habitant morbi tristique senectus et netus et malesuada fames. Habitant morbi tristique.</p>
+					<dds-feature-card-block-large-footer>
+						<svg slot="icon" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
+							<path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+						</svg>
+					</dds-feature-card-block-large-footer>
+				</dds-feature-card-block-large>
+			</dds-scroll-animations>
+
+			<a name="3" data-title="Content Block Segmented (2)"></a>
+			<div class="bx--grid">
+				<div class="bx--row">
+
+					<dds-scroll-animations
+						animation="slide-down-left"
+						selector-targets="
+							dds-content-block-heading,
+							dds-content-group-heading,
+							dds-content-group-item-copy,
+							dds-image-with-caption,
+							dds-text-cta,
+							dds-video-cta-container,
+							dds-content-block-copy,
+							dds-callout-with-media"
+						keep-animation="true">
+						<dds-content-block-segmented>
+							<dds-content-block-heading>Content Block Segmented (2)</dds-content-block-heading>
+
+							<dds-content-block-segmented-item>
+								<dds-content-group-heading>A scelerisque purus semper eget duis at tellus.</dds-content-group-heading>
+								<dds-content-group-item-copy>Elementum nibh tellus molestie nunc non. Habitant morbi tristique senectus et netus et malesuada fames.</dds-content-group-item-copy>
+
+								<dds-image-with-caption
+									slot="media"
+									alt="Image alt text"
+									default-src="../assets/images/card-sample-5.jpg"
+									heading="Mauris iaculis eget dolor nec hendrerit."
+								>
+								</dds-image-with-caption>
+
+								<dds-text-cta slot='footer' cta-type='local' icon-placement='right' href='https://example.com'
+								>Lorem ipsum dolor sit
+								</dds-text-cta>
+							</dds-content-block-segmented-item>
+
+							<dds-content-block-segmented-item>
+								<dds-content-group-heading>A scelerisque purus semper eget duis at tellus.</dds-content-group-heading>
+								<dds-content-group-item-copy>Elementum nibh tellus molestie nunc non. Habitant morbi tristique senectus et netus et malesuada fames.</dds-content-group-item-copy>
+
+								<dds-image-with-caption
+									slot="media"
+									alt="Image alt text"
+									default-src="../assets/images/card-sample-6.jpg"
+									heading="Mauris iaculis eget dolor nec hendrerit."
+								>
+								</dds-image-with-caption>
+							</dds-content-block-segmented-item>
+							<dds-video-cta-container>
+								<dds-card-cta cta-type='video' href='1_9h94wo6b'>
+									Kaltura Player Toolkit
+									<dds-card-cta-footer cta-type='video' slot='footer' href='1_9h94wo6b'>
+										0:18
+									</dds-card-cta-footer>
+								</dds-card-cta>
+							</dds-video-cta-container>
+
+							<dds-callout-with-media>
+								<dds-content-block-heading>Callout With Media</dds-content-block-heading>
+								<dds-content-block-copy size='sm'
+									>Porttitor eget dolor morbi non arcu. Et ligula ullamcorper malesuada proin libero nunc consequat.
+									In est ante in nibh mauris cursus mattis. Turpis tincidunt id aliquet risus feugiat in.
+									Vel facilisis volutpat est velit egestas dui.
+								</dds-content-block-copy>
+								<dds-callout-with-media-video slot='media' video-id="1_9h94wo6b"></dds-callout-with-media-video>
+							</dds-callout-with-media>
+						</dds-content-block-segmented>
+					</dds-scroll-animations>
+				</div>
+			</div>
+
+			<a name="4" data-title="Content Group Horizontal"></a>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<dds-scroll-animations
+						animation="slide-down-right"
+						selector-targets="
+							dds-content-block-heading,
+							dds-content-item-horizontal-eyebrow,
+							dds-content-item-heading,
+							dds-content-item-horizontal-copy,
+							dds-content-block-copy,
+							dds-leadspace-block-media,
+							dds-link-list-item-cta"
+						keep-animation="true">
+						<dds-content-group-horizontal>
+							<dds-content-block-heading>Content Group Horizontal</dds-content-block-heading>
+
+							<dds-content-item-horizontal>
+								<dds-content-item-horizontal-eyebrow>Lorem ipsum</dds-content-item-horizontal-eyebrow>
+								<dds-content-item-heading>Aliquam condimentum</dds-content-item-heading>
+								<dds-content-item-horizontal-copy>Lorem ipsum dolor sit amet, consectetur sellus at elit sollicitudin.</dds-content-item-horizontal-copy>
+								<dds-link-list slot="footer" type="vertical">
+									<dds-link-list-item-cta icon-placement="right" href="https://www.ibm.com" cta-type="local">
+										Link text
+									</dds-link-list-item-cta>
+									<dds-link-list-item-cta icon-placement="right" href="https://www.ibm.com" cta-type="external">
+										External link text
+									</dds-link-list-item-cta>
+								</dds-link-list>
+							</dds-content-item-horizontal>
+
+							<dds-content-item-horizontal>
+								<dds-content-item-horizontal-eyebrow>Lorem ipsum</dds-content-item-horizontal-eyebrow>
+								<dds-content-item-heading>Aliquam condimentum</dds-content-item-heading>
+								<dds-content-item-horizontal-copy>Lorem ipsum dolor sit amet, consectetur sellus at elit sollicitudin.</dds-content-item-horizontal-copy>
+								<dds-link-list slot="footer" type="vertical">
+									<dds-link-list-item-cta icon-placement="right" href="https://www.ibm.com" cta-type="local">
+										Link text
+									</dds-link-list-item-cta>
+									<dds-link-list-item-cta icon-placement="right" href="https://www.ibm.com" cta-type="external">
+										External link text
+									</dds-link-list-item-cta>
+								</dds-link-list>
+							</dds-content-item-horizontal>
+
+						</dds-content-group-horizontal>
+					</dds-scroll-animations>
+				</div>
+			</div>
+
+			<a name="5" data-title="Logo Grid"></a>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<dds-scroll-animations
+						animation="slide-up"
+						selector-targets="
+							dds-content-block-heading,
+							dds-logo-grid-item,
+							dds-logo-grid-link"
+						keep-animation="true">
+						<dds-logo-grid>
+							<dds-content-block-heading>Logo Grid</dds-content-block-heading>
+							<dds-logo-grid-item default-src='../assets/images/logo-sample.jpg' alt='Logo alt text'></dds-logo-grid-item>
+							<dds-logo-grid-item default-src='../assets/images/logo-sample.jpg' alt='Logo alt text'></dds-logo-grid-item>
+							<dds-logo-grid-item default-src='../assets/images/logo-sample.jpg' alt='Logo alt text'></dds-logo-grid-item>
+							<dds-logo-grid-item default-src='../assets/images/logo-sample.jpg' alt='Logo alt text'></dds-logo-grid-item>
+							<dds-logo-grid-item default-src='../assets/images/logo-sample.jpg' alt='Logo alt text'></dds-logo-grid-item>
+							<dds-logo-grid-item default-src='../assets/images/logo-sample.jpg' alt='Logo alt text'></dds-logo-grid-item>
+
+							<dds-logo-grid-link href="${ctaHref}">
+								<p>Amet justo donec</p>
+								<svg slot="footer" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
+									<path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+								</svg>
+							</dds-logo-grid-link>
+						</dds-logo-grid>
+					</dds-scroll-animations>
+				</div>
+			</div>
+
+			<a name="6" data-title="Content Block Cards"></a>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<dds-scroll-animations
+						animation="slide-down"
+						selector-targets="
+							dds-content-block-heading,
+							dds-card-group-item"
+						keep-animation="true">
+						<dds-content-block-cards>
+							<dds-content-block-heading>Content Block Cards</dds-content-block-heading>
+							<dds-card-group>
+
+								<dds-card-group-item cta-type="local" href="https://example.com">
+									<dds-image
+										slot="image"
+										alt="Image alt text"
+										default-src="../assets/images/card-sample-4.jpg"
+									>
+									</dds-image>
+									<dds-card-eyebrow>Topic</dds-card-eyebrow>
+									<dds-card-heading>Natural Language Processing.</dds-card-heading>
+									<dds-card-cta-footer><dds-card-cta-footer>
+								</dds-card-group-item>
+
+								<dds-card-group-item cta-type="local" href="https://example.com">
+									<dds-image
+										slot="image"
+										alt="Image alt text"
+										default-src="../assets/images/card-sample-2.jpg"
+									>
+									</dds-image>
+									<dds-card-eyebrow>Topic</dds-card-eyebrow>
+									<dds-card-heading>Natural Language Processing.</dds-card-heading>
+									<dds-card-cta-footer><dds-card-cta-footer>
+								</dds-card-group-item>
+
+
+								<dds-card-group-item cta-type="local" href="https://example.com">
+									<dds-image
+										slot="image"
+										alt="Image alt text"
+										default-src="../assets/images/card-sample-3.jpg"
+									>
+									</dds-image>
+									<dds-card-eyebrow>Topic</dds-card-eyebrow>
+									<dds-card-heading>Natural Language Processing.</dds-card-heading>
+									<dds-card-cta-footer><dds-card-cta-footer>
+								</dds-card-group-item>
+							</dds-card-group>
+						</dds-content-block-cards>
+					</dds-scroll-animations>
+				</div>
+			</div>
+
+			<a name="7" data-title="Callout Quote"></a>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<dds-scroll-animations
+						animation="slide-right"
+						selector-targets="
+							dds-callout-quote"
+						keep-animation="true">
+						<dds-callout-quote
+							>Callout Quote: Duis aute irure dolor in reprehenderit
+							<dds-quote-source-heading>Lorem ipsum</dds-quote-source-heading>
+							<dds-quote-source-copy>consectetur adipiscing elit</dds-quote-source-copy>
+							<dds-quote-source-bottom-copy>IBM Cloud</dds-quote-source-bottom-copy>
+							<dds-link-with-icon slot='footer' href='https//example/com'>
+								Link with Icon
+								<svg slot="icon" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
+									<path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+								</svg>
+							</dds-link-with-icon>
+						</dds-callout-quote>
+					</dds-scroll-animations>
+				</div>
+			</div>
+		</dds-table-of-contents>
+		</dds-scroll-animations>
+
+		<!--<div class="bx--grid">
+			<div class="bx--row">
+				<div class="bx--col-sm-4 bx--col-lg-12 bx--offset-lg-4">
+					<dds-scroll-animations
+						animation="slide-up-right"
+						selector-targets="
+							dds-content-block-heading,
+							dds-cta-section-copy,
+							dds-button-group-item,
+							dds-cta-section-item"
+						keep-animation="true">
+						<dds-cta-section>
+							<dds-content-block-heading>CTA Section</dds-content-block-heading>
+							<dds-cta-section-copy>Want to discuss your options with a DevOps expert? Contact our sales team to evaluate your needs.</dds-cta-section-copy>
+
+							<dds-button-group slot="action">
+								<dds-button-group-item href="https://example.com">
+									Contact sales
+									<svg slot="icon" focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20">
+										<path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
+									</svg>
+								</dds-button-group-item>
+							</dds-button-group>
+
+							<dds-cta-section-item>
+								<dds-cta-section-item-heading>Get connected</dds-cta-section-item-heading>
+								<dds-cta-section-item-copy
+									>IBM DevOps partners have a wide range of expertise. Find one to build the right solution for
+									you.</dds-cta-section-item-copy
+								>
+								<dds-text-cta slot="footer" cta-type="local" icon-placement="right" href="example.com">Find a partner</dds-text-cta>
+							</dds-cta-section-item>
+
+							<dds-cta-section-item>
+								<dds-cta-section-item-heading>Learn how</dds-cta-section-item-heading>
+								<dds-cta-section-item-copy>IBM DevOps partners have a wide range of expertise</dds-cta-section-item-copy>
+								<dds-text-cta slot="footer" cta-type="local" icon-placement="right" href="example.com">Browse tutorials</dds-text-cta>
+							</dds-cta-section-item>
+						</dds-cta-section>
+					</dds-scroll-animations>
+				</div>
+			</div>
+		</div>-->
+  </div>
+
+{{/ base }}
