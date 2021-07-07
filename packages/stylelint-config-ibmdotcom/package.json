@@ -5,8 +5,8 @@
   "description": "Stylelint configuration for the IBM.com Library",
   "license": "Apache-2.0",
   "main": "index.js",
-  "repository": "https://github.com/carbon-design-system/ibmdotcom-web-components-test",
-  "bugs": "https://github.com/carbon-design-system/ibmdotcom-web-components-test/issues",
+  "repository": "https://github.com/carbon-design-system/carbon-for-ibm-dotcom-web-components-template",
+  "bugs": "https://github.com/carbon-design-system/carbon-for-ibm-dotcom-web-components-template/issues",
   "keywords": [
     "ibm",
     "elements",

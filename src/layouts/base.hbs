@@ -186,10 +186,10 @@
       digitalData.page.pageInfo.ibm.country = params.get('cc').toUpperCase();
     }
 
-      {{#if htmlWebpackPlugin.options.enableRTL }}
-      document.documentElement.dir = 'rtl';
-      document.getElementsByTagName('html')[0].setAttribute('dir', 'rtl');
-      {{/if}}
+    {{#if htmlWebpackPlugin.options.enableRTL }}
+    document.documentElement.dir = 'rtl';
+    document.getElementsByTagName('html')[0].setAttribute('dir', 'rtl');
+    {{/if}}
   </script>
 
   <!-- Suppress custom elements until styles are loaded -->
@@ -201,6 +201,7 @@
 
   <!-- IBM Tag Management and Site Analytics -->
   <script src="//1.www.s81c.com/common/stats/ibm-common.js" async="async"></script>
+  {{ save_i18n htmlWebpackPlugin.options.data }}
 </head>
 
 <body>
@@ -209,4 +210,8 @@
 </dds-dotcom-shell-container>
 </body>
 
+
+<script>
+
+</script>
 </html>

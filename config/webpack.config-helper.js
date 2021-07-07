@@ -17,26 +17,33 @@ const dotenv = require('dotenv').config({ path: __dirname + '/../.env' });
  */
 const enableRTL = dotenv.parsed && dotenv.parsed.ENABLE_RTL === 'true';
 
+const languages = {
+  '': require('../src/locales/en.json'),
+};
+
 const pages = require('../src/pages');
 let renderedPages = [];
 let chunkEntries = {};
 for (let i = 0; i < pages.length; i++) {
   let page = Object.assign({}, pages[i]);
-  renderedPages.push(
-    new HtmlWebpackPlugin({
-      hash: true,
-      inject: true,
-      template: page.template,
-      filename: page.output,
-      chunks: page.chunks,
-      title: page.content.title,
-      description: page.content.description,
-      altlangRootPath:
-        (dotenv.parsed && dotenv.parsed.ALTLANG_ROOT_PATH) || '/',
-      enableRTL: enableRTL,
-    })
-  );
-  chunkEntries = Object.assign({}, chunkEntries, page.chunkEntry);
+  Object.keys(languages).map((language) => {
+    renderedPages.push(
+      new HtmlWebpackPlugin({
+        hash: true,
+        inject: true,
+        template: page.template,
+        filename: './' + language + page.output,
+        data: languages[language].translation[page.translationKey],
+        chunks: page.chunks,
+        title: page.content.title,
+        description: page.content.description,
+        altlangRootPath:
+          (dotenv.parsed && dotenv.parsed.ALTLANG_ROOT_PATH) || '/',
+        enableRTL: enableRTL,
+      })
+    );
+    chunkEntries = Object.assign({}, chunkEntries, page.chunkEntry);
+  });
 }
 
 module.exports = (options) => {
@@ -80,11 +87,15 @@ module.exports = (options) => {
         {
           test: /\.hbs$/,
           loader: 'handlebars-loader',
-          query: {
+          options: {
             partialDirs: [
               path.join(__dirname, '../src', 'layouts'),
               path.join(__dirname, '../src', 'pages'),
             ],
+            precompileOptions: {
+              knownHelpersOnly: false,
+            },
+            runtime: path.resolve(__dirname, '../config/handlebars'),
           },
         },
         {

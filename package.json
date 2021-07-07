@@ -37,7 +37,7 @@
     "eslint-plugin-jsdoc": "^30.6.3",
     "fast-sass-loader": "^1.5.0",
     "file-loader": "^1.1.11",
-    "handlebars": "^4.0.12",
+    "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.0",
     "html-webpack-plugin": "^4.5.1",
     "husky": "^4.3.0",
@@ -57,9 +57,12 @@
   },
   "dependencies": {
     "@carbon/grid": "^10.15.0",
-    "@carbon/ibmdotcom-web-components": "^1.3.1",
+    "@carbon/ibmdotcom-web-components": "^1.6.0",
     "@carbon/type": "^10.13.0",
     "carbon-web-components": "^1.7.1",
+    "handlebars-i18n": "^1.2.1",
+    "i18next": "^20.3.2",
+    "intl": "^1.2.5",
     "lit-element": "^2.4.0",
     "lit-html": "^1.3.0"
   }
