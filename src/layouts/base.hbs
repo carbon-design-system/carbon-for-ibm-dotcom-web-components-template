@@ -189,7 +189,7 @@
     {{#if htmlWebpackPlugin.options.enableRTL }}
     document.documentElement.dir = 'rtl';
     document.getElementsByTagName('html')[0].setAttribute('dir', 'rtl');
-    {{/if}}
+    {{/if}} 
   </script>
 
   <!-- Suppress custom elements until styles are loaded -->
@@ -206,6 +206,7 @@
 
 <body>
 <dds-dotcom-shell-container>
+  <p>hi</p>
   {{> @partial-block }}
 </dds-dotcom-shell-container>
 </body>
