@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>{{ htmlWebpackPlugin.options.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"
+  />
+  <meta name="description" content="{{ htmlWebpackPlugin.options.description }}">
+  <link rel="icon" href="//www.ibm.com/favicon.ico" />
+  <meta name="dcterms.date" content="1955-11-05" />
+  <meta name="dcterms.rights" content="© Copyright IBM Corp. 2020" />
+  <meta name="geo.country" content="US" />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="alternate" hrefLang="en-us" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html/?cc=us&lc=en"/>
+  <link rel="alternate" hrefLang="x-default" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html"/>
+  <link rel="alternate" hrefLang="en-af" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=af&lc=en"/>
+  <link rel="alternate" hrefLang="fr-dz" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=dz&lc=fr"/>
+  <link rel="alternate" hrefLang="pt-ao" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ao&lc=pt"/>
+  <link rel="alternate" hrefLang="en-ai" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ai&lc=en"/>
+  <link rel="alternate" hrefLang="en-ag" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ag&lc=en"/>
+  <link rel="alternate" hrefLang="es-ar" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ar&lc=es"/>
+  <link rel="alternate" hrefLang="en-aw" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=aw&lc=en"/>
+  <link rel="alternate" hrefLang="en-au" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=au&lc=en"/>
+  <link rel="alternate" hrefLang="de-at" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=at&lc=de"/>
+  <link rel="alternate" hrefLang="en-bs" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bs&lc=en"/>
+  <link rel="alternate" hrefLang="en-bh" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bh&lc=en"/>
+  <link rel="alternate" hrefLang="en-bd" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bd&lc=en"/>
+  <link rel="alternate" hrefLang="en-bb" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bb&lc=en"/>
+  <link rel="alternate" hrefLang="en-be" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=be&lc=en"/>
+  <link rel="alternate" hrefLang="en-bm" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bm&lc=en"/>
+  <link rel="alternate" hrefLang="es-bo" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bo&lc=es"/>
+  <link rel="alternate" hrefLang="en-bw" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bw&lc=en"/>
+  <link rel="alternate" hrefLang="pt-br" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=br&lc=pt"/>
+  <link rel="alternate" hrefLang="en-vg" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=vg&lc=en"/>
+  <link rel="alternate" hrefLang="en-bn" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bn&lc=en"/>
+  <link rel="alternate" hrefLang="en-bg" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bg&lc=en"/>
+  <link rel="alternate" hrefLang="fr-bf" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=bf&lc=fr"/>
+  <link rel="alternate" hrefLang="en-kh" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=kh&lc=en"/>
+  <link rel="alternate" hrefLang="fr-cm" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=cm&lc=fr"/>
+  <link rel="alternate" hrefLang="en-ca" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ca&lc=en"/>
+  <link rel="alternate" hrefLang="fr-ca" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ca&lc=fr"/>
+  <link rel="alternate" hrefLang="en-ky" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ky&lc=en"/>
+  <link rel="alternate" hrefLang="fr-td" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=td&lc=fr"/>
+  <link rel="alternate" hrefLang="es-cl" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=cl&lc=es"/>
+  <link rel="alternate" hrefLang="zh-cn" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=cn&lc=zh"/>
+  <link rel="alternate" hrefLang="es-co" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=co&lc=es"/>
+  <link rel="alternate" hrefLang="fr-cd" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=cd&lc=fr"/>
+  <link rel="alternate" hrefLang="fr-cg" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=cg&lc=fr"/>
+  <link rel="alternate" hrefLang="es-cr" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=cr&lc=es"/>
+  <link rel="alternate" hrefLang="en-hr" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=hr&lc=en"/>
+  <link rel="alternate" hrefLang="en-cw" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=cw&lc=en"/>
+  <link rel="alternate" hrefLang="en-cy" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=cy&lc=en"/>
+  <link rel="alternate" hrefLang="en-cz" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=cz&lc=en"/>
+  <link rel="alternate" hrefLang="en-dm" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=dm&lc=en"/>
+  <link rel="alternate" hrefLang="en-dk" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=dk&lc=en"/>
+  <link rel="alternate" hrefLang="es-ec" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ec&lc=es"/>
+  <link rel="alternate" hrefLang="en-eg" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=eg&lc=en"/>
+  <link rel="alternate" hrefLang="en-ee" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ee&lc=en"/>
+  <link rel="alternate" hrefLang="en-et" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=et&lc=en"/>
+  <link rel="alternate" hrefLang="en-fi" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=fi&lc=en"/>
+  <link rel="alternate" hrefLang="fr-fr" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=fr&lc=fr"/>
+  <link rel="alternate" hrefLang="fr-ga" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ga&lc=fr"/>
+  <link rel="alternate" hrefLang="de-de" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=de&lc=de"/>
+  <link rel="alternate" hrefLang="en-gh" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=gh&lc=en"/>
+  <link rel="alternate" hrefLang="en-gr" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=gr&lc=en"/>
+  <link rel="alternate" hrefLang="en-gd" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=gd&lc=en"/>
+  <link rel="alternate" hrefLang="en-gy" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=gy&lc=en"/>
+  <link rel="alternate" hrefLang="en-hk" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=hk&lc=en"/>
+  <link rel="alternate" hrefLang="en-hu" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=hu&lc=en"/>
+  <link rel="alternate" hrefLang="en-in" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=in&lc=en"/>
+  <link rel="alternate" hrefLang="en-id" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=id&lc=en"/>
+  <link rel="alternate" hrefLang="en-iq" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=iq&lc=en"/>
+  <link rel="alternate" hrefLang="en-ie" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ie&lc=en"/>
+  <link rel="alternate" hrefLang="en-il" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=il&lc=en"/>
+  <link rel="alternate" hrefLang="it-it" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=it&lc=it"/>
+  <link rel="alternate" hrefLang="fr-ci" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ci&lc=fr"/>
+  <link rel="alternate" hrefLang="en-jm" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=jm&lc=en"/>
+  <link rel="alternate" hrefLang="ja-jp" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=jp&lc=ja"/>
+  <link rel="alternate" hrefLang="en-jo" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=jo&lc=en"/>
+  <link rel="alternate" hrefLang="en-kz" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=kz&lc=en"/>
+  <link rel="alternate" hrefLang="en-ke" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ke&lc=en"/>
+  <link rel="alternate" hrefLang="ko-kr" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=kr&lc=ko"/>
+  <link rel="alternate" hrefLang="en-kw" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=kw&lc=en"/>
+  <link rel="alternate" hrefLang="en-lv" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=lv&lc=en"/>
+  <link rel="alternate" hrefLang="en-lb" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=lb&lc=en"/>
+  <link rel="alternate" hrefLang="en-ly" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ly&lc=en"/>
+  <link rel="alternate" hrefLang="en-lt" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=lt&lc=en"/>
+  <link rel="alternate" hrefLang="en-mw" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=mw&lc=en"/>
+  <link rel="alternate" hrefLang="en-my" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=my&lc=en"/>
+  <link rel="alternate" hrefLang="fr-mu" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=mu&lc=fr"/>
+  <link rel="alternate" hrefLang="es-mx" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=mx&lc=es"/>
+  <link rel="alternate" hrefLang="en-ms" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ms&lc=en"/>
+  <link rel="alternate" hrefLang="fr-ma" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ma&lc=fr"/>
+  <link rel="alternate" hrefLang="pt-mz" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=mz&lc=pt"/>
+  <link rel="alternate" hrefLang="en-na" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=na&lc=en"/>
+  <link rel="alternate" hrefLang="en-np" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=np&lc=en"/>
+  <link rel="alternate" hrefLang="en-nl" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=nl&lc=en"/>
+  <link rel="alternate" hrefLang="en-nz" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=nz&lc=en"/>
+  <link rel="alternate" hrefLang="fr-ne" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ne&lc=fr"/>
+  <link rel="alternate" hrefLang="en-ng" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ng&lc=en"/>
+  <link rel="alternate" hrefLang="en-no" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=no&lc=en"/>
+  <link rel="alternate" hrefLang="en-om" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=om&lc=en"/>
+  <link rel="alternate" hrefLang="en-pk" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=pk&lc=en"/>
+  <link rel="alternate" hrefLang="es-py" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=py&lc=es"/>
+  <link rel="alternate" hrefLang="es-pe" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=pe&lc=es"/>
+  <link rel="alternate" hrefLang="en-ph" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ph&lc=en"/>
+  <link rel="alternate" hrefLang="pl-pl" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=pl&lc=pl"/>
+  <link rel="alternate" hrefLang="en-pt" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=pt&lc=en"/>
+  <link rel="alternate" hrefLang="en-qa" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=qa&lc=en"/>
+  <link rel="alternate" hrefLang="en-ro" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ro&lc=en"/>
+  <link rel="alternate" hrefLang="ru-ru" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ru&lc=ru"/>
+  <link rel="alternate" hrefLang="en-kn" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=kn&lc=en"/>
+  <link rel="alternate" hrefLang="en-lc" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=lc&lc=en"/>
+  <link rel="alternate" hrefLang="en-vc" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=vc&lc=en"/>
+  <link rel="alternate" hrefLang="en-sa" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=sa&lc=en"/>
+  <link rel="alternate" hrefLang="fr-sn" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=sn&lc=fr"/>
+  <link rel="alternate" hrefLang="en-rs" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=rs&lc=en"/>
+  <link rel="alternate" hrefLang="fr-sc" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=sc&lc=fr"/>
+  <link rel="alternate" hrefLang="en-sl" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=sl&lc=en"/>
+  <link rel="alternate" hrefLang="en-sg" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=sg&lc=en"/>
+  <link rel="alternate" hrefLang="en-sk" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=sk&lc=en"/>
+  <link rel="alternate" hrefLang="en-si" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=si&lc=en"/>
+  <link rel="alternate" hrefLang="en-za" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=za&lc=en"/>
+  <link rel="alternate" hrefLang="es-es" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=es&lc=es"/>
+  <link rel="alternate" hrefLang="en-lk" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=lk&lc=en"/>
+  <link rel="alternate" hrefLang="en-sr" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=sr&lc=en"/>
+  <link rel="alternate" hrefLang="en-se" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=se&lc=en"/>
+  <link rel="alternate" hrefLang="fr-ch" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ch&lc=fr"/>
+  <link rel="alternate" hrefLang="de-ch" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ch&lc=de"/>
+  <link rel="alternate" hrefLang="zh-tw" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=tw&lc=zh"/>
+  <link rel="alternate" hrefLang="en-tz" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=tz&lc=en"/>
+  <link rel="alternate" hrefLang="en-th" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=th&lc=en"/>
+  <link rel="alternate" hrefLang="en-tt" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=tt&lc=en"/>
+  <link rel="alternate" hrefLang="fr-tn" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=tn&lc=fr"/>
+  <link rel="alternate" hrefLang="tr-tr" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=tr&lc=tr"/>
+  <link rel="alternate" hrefLang="en-ye" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ye&lc=en"/>
+  <link rel="alternate" hrefLang="en-tc" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=tc&lc=en"/>
+  <link rel="alternate" hrefLang="en-ua" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ua&lc=en"/>
+  <link rel="alternate" hrefLang="en-ug" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ug&lc=en"/>
+  <link rel="alternate" hrefLang="en-ae" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ae&lc=en"/>
+  <link rel="alternate" hrefLang="en-gb" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=uk&lc=en"/>
+  <link rel="alternate" hrefLang="es-uy" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=uy&lc=es"/>
+  <link rel="alternate" hrefLang="en-uz" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=uz&lc=en"/>
+  <link rel="alternate" hrefLang="es-ve" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=ve&lc=es"/>
+  <link rel="alternate" hrefLang="en-vn" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=vn&lc=en"/>
+  <link rel="alternate" hrefLang="en-zm" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=zm&lc=en"/>
+  <link rel="alternate" hrefLang="en-zw" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/index.html?cc=zw&lc=en"/>
+
+  <script>
+    digitalData = {
+      page: {
+        category: {
+          primaryCategory: '' // e.g. SB03
+        },
+        pageInfo: {
+          effectiveDate: '', // e.g. 2014-11-19
+          expiryDate: '', // e.g. 2017-11-19
+          language: 'en-US', // e.g. en-US
+          publishDate: '', // e.g. 2014-11-19
+          publisher: '', // e.g. IBM Corporation
+          version: 'Carbon for IBM.com',
+          ibm: {
+            contentDelivery: '', // e.g. ECM/Filegen
+            contentProducer: '', // e.g. ECM/IConS Adopter 34 - GS83J2343G3H3ERG - 11/19/2014 05:14:02 PM
+            country: 'US', // e.g. US
+            industry: '', // e.g. B,U
+            owner: '', // e.g. Some Person/City/IBM
+            siteID: '', // e.g. MySiteID
+            subject: '', // e.g. SW492
+            type: '' // e.g CT305
+          }
+        }
+      }
+    };
+
+    var params = new URLSearchParams(window.location.search);
+
+    if(params.has('lc') && params.has('cc')) {
+      var lang = params.get('lc') + '-' + params.get('cc').toUpperCase();
+      document.getElementsByTagName("html")[0].setAttribute("lang", lang);
+      digitalData.page.pageInfo.language = lang;
+      digitalData.page.pageInfo.ibm.country = params.get('cc').toUpperCase();
+    }
+
+    {{#if htmlWebpackPlugin.options.enableRTL }}
+    document.documentElement.dir = 'rtl';
+    document.getElementsByTagName('html')[0].setAttribute('dir', 'rtl');
+    {{/if}}
+  </script>
+
+  <!-- Suppress custom elements until styles are loaded -->
+  <style>
+    dds-dotcom-shell-container:not(:defined) {
+      display: none;
+    }
+  </style>
+
+  <!-- IBM Tag Management and Site Analytics -->
+  <script src="//1.www.s81c.com/common/stats/ibm-common.js" async="async"></script>
+  {{ save_i18n htmlWebpackPlugin.options.data }}
+</head>
+
+<body>
+<dds-dotcom-shell-container>
+  {{> @partial-block }}
+</dds-dotcom-shell-container>
+</body>
+
+
+<script>
+
+</script>
+</html>

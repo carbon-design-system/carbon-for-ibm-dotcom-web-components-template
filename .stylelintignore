@@ -1,0 +1,6 @@
+**/build/**
+**/dist/**
+**/examples/**
+**/docs/**
+**/coverage/**
+**/jsdocs/**
