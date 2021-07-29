@@ -1,6 +1,6 @@
 const pages = [
   {
-    output: './index.html',
+    output: 'index.html',
     content: {
       title: 'Home',
       description: 'Home Page',
@@ -11,6 +11,19 @@ const pages = [
     },
     template: './src/pages/home/home.hbs',
     translationKey: 'home',
+  },
+  {
+    output: 'page2.html',
+    content: {
+      title: 'Page 2',
+      description: 'Page 2',
+    },
+    chunks: ['page2'],
+    chunkEntry: {
+      page2: './src/pages/page2/page2.js',
+    },
+    template: './src/pages/page2/page2.hbs',
+    translationKey: 'page2',
   },
 ];
 

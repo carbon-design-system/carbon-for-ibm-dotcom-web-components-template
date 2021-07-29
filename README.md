@@ -49,6 +49,8 @@ ALTLANG_ROOT_PATH=<Sets the root path for language alternative urls, default is 
 
 ENABLE_RTL=<Boolean to enable RTL for the page, eg. false >
 
+LANG_DEFAULT=<Sets the default language, default is 'en-us'>
+
 ```
 
 Then start the application:
@@ -110,88 +112,54 @@ const pages = [
 This template handles page language functionality, where the available language
 template strings are defined in
 
-`locales/*.json`, where the name of each `json` file is a language.
+`locales/[language-locale]/*.json`, where the name of each `json` file is the
+corresponding page translation key.
 
-For example, `en.json` would have the following format:
+For example, the homepage for `en-us` would live under
+`/src/locales/en-us/home.json` with the following content:
 
 ```
-
 {
-
-  "translations": {
-    "home": {
-      "page_heading": "Page heading"
-     }
-     "example: {
-       "example_heading": "Example heading"
-     }
-
-  }
-
+  "leadspace_title": "Lead space title",
+  "leadspace_copy": "Use this area for a short line of copy to support the title",
+  "content_block_mixed_heading": "Content Block - Mixed Groups",
+  "content_block_segmented_heading": "Content Block - Segmented",
+  "content_block_simple_heading": "Content Block - Simple",
+  "content_block_media_heading": "Content Block - With Media"
 }
-
 ```
 
-Note that each key in this `json` is the name of the page that will use its
-contents. In other words, `leadspace_heading` will only be used in the `home`
-page, and `example_heading` will only be used in the `example` page.
+To create additional languages, create a new folder for the language/locale,
+then generate the corresponding page data.
 
-To build pages in another language, create another language `json` file like the
-one seen above using the exact same keys.
-
-In this example, we fill `es.json` with the according translations in Spanish.
+For example, creating a corresponding `home` page data for `fr-ca`, the file
+`/src/locales/fr-ca/home.json` would be created with the following content:
 
 ```
-
 {
-
-  "translations": {
-    "home": {
-      "page_heading": "Encabezado de página"
-     }
-     "example: {
-       "example_heading": "Ejemplo de encabezado"
-     }
-
-  }
-
+  "leadspace_title": "Titre de l'espace principal",
+  "leadspace_copy": "Utilisez cette zone pour une courte ligne de copie pour soutenir le titre",
+  "content_block_mixed_heading": "Bloc de contenu - Groupes mixtes",
+  "content_block_segmented_heading": "Bloc de contenu - Segmenté",
+  "content_block_simple_heading": "Bloc de contenu - Simple",
+  "content_block_media_heading": "Bloc de contenu - Avec média"
 }
-
-```
-
-Once you are ready to export your pages, open `config/webpack.config-helper.js`
-and edit the `languages` object to include additional languages with its
-respective locales.
-
-```
-
-const languages = {
-	'': require('../src/locales/en.json'),
-	'mx-es': require('../src/locales/es.json')
-}
-
 ```
 
 Once you run `yarn build`, the exported files will be found in the `dist`
 folder, and each locale will also output its own folder containing all of the
 translated pages from the original template.
 
-**Note**: Since the Masthead and Footer components use the language and locale
-URL parameters, opening the rendered translated pages will still show these
-components in English unless the `digitalData` object contains the proper values
-for the translations.
+Urls for the above examples would output as:
 
-In this case we can do this:
+- /en-us/index.html
+- /fr-ca/index.html
 
-```
+Note, if there is only one language folder in `/src/locales`, then the output
+will not generate the corresponding language/locale folders, and would generate
+in the root distribution folder:
 
-digitalData.page.pageInfo.language = 'es';
-digitalData.page.pageInfo.ibm.country = 'mx';
-
-```
-
-With these two values set to the specified language and country, the components
-will be properly translated to whichever language was set.
+- /index.html
 
 ## SASS compilation and `carbon-components`
 
@@ -335,6 +303,6 @@ And finally merge changes in:
 
 ```bash
 
-git merge template/master
+git merge template/main
 
 ```
