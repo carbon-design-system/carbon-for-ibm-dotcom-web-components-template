@@ -60,7 +60,7 @@ function _getLanguageFiles() {
     const lang = directories[0];
     fs.readdirSync(`${dirpath}/${lang}`).forEach((file) => {
       const page = file.slice(0, -5);
-      const content = fs.readFileSync(`${dirpath}/${dir}/${file}`, 'utf8');
+      const content = fs.readFileSync(`${dirpath}/${lang}/${file}`, 'utf8');
       languages[''][page] = JSON.parse(content);
       languages[''][page].base_lang = lang;
       languages[''][page].base_country = lang.slice(-2);
@@ -87,7 +87,6 @@ function _getLanguageFiles() {
  * Stores the language data
  */
 const languages = _getLanguageFiles();
-console.log('languages', languages);
 
 /**
  * Generates the page entries for webpack

@@ -63,13 +63,14 @@
 </head>
 
 <body>
-<dds-dotcom-shell-container>
+{{#if htmlWebpackPlugin.options.data.base_languages }}
+  <dds-dotcom-shell-container>
   {{> @partial-block }}
-</dds-dotcom-shell-container>
+  </dds-dotcom-shell-container>
+{{else}}
+  <dds-dotcom-shell-container disable-locale-button="true">
+  {{> @partial-block }}
+  </dds-dotcom-shell-container>
+{{/if}}>
 </body>
-
-
-<script>
-
-</script>
 </html>

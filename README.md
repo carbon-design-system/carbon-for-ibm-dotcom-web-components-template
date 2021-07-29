@@ -150,6 +150,17 @@ Once you run `yarn build`, the exported files will be found in the `dist`
 folder, and each locale will also output its own folder containing all of the
 translated pages from the original template.
 
+Urls for the above examples would output as:
+
+- /en-us/index.html
+- /fr-ca/index.html
+
+Note, if there is only one language folder in `/src/locales`, then the output
+will not generate the corresponding language/locale folders, and would generate
+in the root distribution folder:
+
+- /index.html
+
 ## SASS compilation and `carbon-components`
 
 There may be times pathing errors are encountered when importing certain
