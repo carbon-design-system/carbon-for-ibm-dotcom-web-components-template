@@ -1,5 +1,6 @@
 'use strict';
 const path = require('path');
+const fs = require('fs');
 const Webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -17,41 +18,124 @@ const dotenv = require('dotenv').config({ path: __dirname + '/../.env' });
  */
 const enableRTL = dotenv.parsed && dotenv.parsed.ENABLE_RTL === 'true';
 
-const languages = {
-  '': require('../src/locales/en.json'),
-};
+/**
+ * Sets the default language
+ *
+ * @type {string|string}
+ */
+const defaultLang = (dotenv.parsed && dotenv.parsed.LANG_DEFAULT) || 'en-us';
 
-const pages = require('../src/pages');
-let renderedPages = [];
-let chunkEntries = {};
-for (let i = 0; i < pages.length; i++) {
-  let page = Object.assign({}, pages[i]);
-  Object.keys(languages).map((language) => {
-    renderedPages.push(
-      new HtmlWebpackPlugin({
-        hash: true,
-        inject: true,
-        template: page.template,
-        filename: './' + language + page.output,
-        data: languages[language].translation[page.translationKey],
-        chunks: page.chunks,
-        title: page.content.title,
-        description: page.content.description,
-        altlangRootPath:
-          (dotenv.parsed && dotenv.parsed.ALTLANG_ROOT_PATH) || '/',
-        enableRTL: enableRTL,
-      })
-    );
-    chunkEntries = Object.assign({}, chunkEntries, page.chunkEntry);
-  });
+/**
+ * This sets the alt language directory
+ *
+ * @type {string|string}
+ */
+const altLang = (dotenv.parsed && dotenv.parsed.ALTLANG_ROOT_PATH) || '';
+
+/**
+ * Returns the list of directories in a given directory
+ *
+ * @param {string} dir Directory string
+ * @returns {string[]} List of sub-directories
+ * @private
+ */
+function _getDirectories(dir) {
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name);
 }
+
+/**
+ * Gets all of the language files in the folder
+ * @private
+ */
+function _getLanguageFiles() {
+  const languages = {};
+  const dirpath = path.join(__dirname, '../src/locales');
+  const directories = _getDirectories(dirpath);
+
+  if (directories.length === 1) {
+    languages[''] = {};
+    const lang = directories[0];
+    fs.readdirSync(`${dirpath}/${lang}`).forEach((file) => {
+      const page = file.slice(0, -5);
+      const content = fs.readFileSync(`${dirpath}/${dir}/${file}`, 'utf8');
+      languages[''][page] = JSON.parse(content);
+      languages[''][page].base_lang = lang;
+      languages[''][page].base_country = lang.slice(-2);
+    });
+  } else {
+    directories.forEach((lang) => {
+      languages[lang] = {};
+      fs.readdirSync(`${dirpath}/${lang}`).forEach((file) => {
+        const page = file.slice(0, -5);
+        const content = fs.readFileSync(`${dirpath}/${lang}/${file}`, 'utf8');
+        languages[lang][page] = JSON.parse(content);
+        languages[lang][page].base_lang = lang;
+        languages[lang][page].base_country = lang.slice(-2);
+        languages[lang][page].base_languages = directories;
+        languages[lang][page].base_lang_default = defaultLang;
+      });
+    });
+  }
+
+  return languages;
+}
+
+/**
+ * Stores the language data
+ */
+const languages = _getLanguageFiles();
+console.log('languages', languages);
+
+/**
+ * Generates the page entries for webpack
+ *
+ * @returns {{renderedPages: *[], chunkEntries: {}}}
+ * @private
+ */
+function _renderPageEntries() {
+  const pages = require('../src/pages');
+  let renderedPages = [];
+  let chunkEntries = {};
+  for (let i = 0; i < pages.length; i++) {
+    let page = Object.assign({}, pages[i]);
+    Object.keys(languages).map((language) => {
+      renderedPages.push(
+        new HtmlWebpackPlugin({
+          hash: true,
+          inject: true,
+          template: page.template,
+          filename: `./${language}/${page.output}`,
+          data: languages[language][page.translationKey],
+          chunks: page.chunks,
+          title: page.content.title,
+          description: page.content.description,
+          altlangRootPath: altLang,
+          enableRTL: enableRTL,
+        })
+      );
+      chunkEntries = Object.assign({}, chunkEntries, page.chunkEntry);
+    });
+  }
+
+  return { renderedPages, chunkEntries };
+}
+
+/**
+ * Stores the page entry data for webpack
+ *
+ * @type {{renderedPages: *[], chunkEntries: {}}}
+ */
+const pages = _renderPageEntries();
 
 module.exports = (options) => {
   const dest = path.join(__dirname, '../dist');
 
   let webpackConfig = {
     devtool: options.devtool,
-    entry: chunkEntries,
+    entry: pages.chunkEntries,
     output: {
       path: dest,
       filename: './assets/js/[name].js',
@@ -242,7 +326,7 @@ module.exports = (options) => {
     );
   }
 
-  webpackConfig.plugins = webpackConfig.plugins.concat(renderedPages);
+  webpackConfig.plugins = webpackConfig.plugins.concat(pages.renderedPages);
 
   return webpackConfig;
 };
