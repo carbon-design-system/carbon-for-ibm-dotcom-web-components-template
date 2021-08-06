@@ -4,5 +4,14 @@
   "content_block_mixed_heading": "Content Block - Mixed Groups",
   "content_block_segmented_heading": "Content Block - Segmented",
   "content_block_simple_heading": "Content Block - Simple",
-  "content_block_media_heading": "Content Block - With Media"
+  "content_block_media_heading": "Content Block - With Media",
+  "content_group_with_cards": "Content Group - with Cards",
+  "content_group_with_pictograms": "Content Group - with Pictograms",
+  "content_group_simple": "Content Group Simple",
+  "card_section_with_images": "Card Section - with Images",
+  "sample_copy_long": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et ultricies est. Mauris iaculis eget dolor nec hendrerit. Phasellus at elit sollicitudin, sodales nulla quis, consequat libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et ultricies est. Mauris iaculis eget dolor nec hendrerit. Phasellus at elit sollicitudin, sodales nulla quis, consequat libero.",
+  "sample_copy_medium": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et ultricies est. Mauris iaculis eget dolor nec hendrerit. Phasellus at elit sollicitudin, sodales nulla quis, consequat libero.",
+  "sample_copy_short": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "sample_copy_link": "Dolor sit amet",
+  "sample_copy_eyebrow": "Consectetur"
 }

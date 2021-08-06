@@ -13,10 +13,11 @@ const rtlcss = require('rtlcss');
 const dotenv = require('dotenv').config({ path: __dirname + '/../.env' });
 
 /**
- * Flag to enable RTL
- * @type {boolean}
+ * Langauge codes that will enable RTL
+ *
+ * @type {string[]}
  */
-const enableRTL = dotenv.parsed && dotenv.parsed.ENABLE_RTL === 'true';
+const rtlLangs = ['ar'];
 
 /**
  * Sets the default language
@@ -101,11 +102,39 @@ function _renderPageEntries() {
   for (let i = 0; i < pages.length; i++) {
     let page = Object.assign({}, pages[i]);
     Object.keys(languages).map((language) => {
+      const lc = language.substring(0, 2);
+      const enableRTL = rtlLangs.indexOf(lc) !== -1;
       renderedPages.push(
         new HtmlWebpackPlugin({
           hash: true,
           inject: true,
           template: page.template,
+          templateParameters: (compilation, assets, assetTags, options) => {
+            // this will add in rtlcss if it is in the list of pages to add under `rtlLangs`
+            if (enableRTL) {
+              compilation.options.module.rules.forEach((rule, ruleIdx) => {
+                if (rule.use) {
+                  rule.use.forEach((loader, loaderIdx) => {
+                    if (loader.loader === 'postcss-loader') {
+                      compilation.options.module.rules[ruleIdx].use[
+                        loaderIdx
+                      ].options.plugins.push(rtlcss);
+                    }
+                  });
+                }
+              });
+            }
+
+            return {
+              compilation,
+              webpackConfig: compilation.options,
+              htmlWebpackPlugin: {
+                tags: assetTags,
+                files: assets,
+                options,
+              },
+            };
+          },
           filename: `./${language}/${page.output}`,
           data: languages[language][page.translationKey],
           chunks: page.chunks,
@@ -233,12 +262,11 @@ module.exports = (options) => {
     {
       loader: 'postcss-loader',
       options: {
-        plugins: () => {
-          const autoPrefixer = require('autoprefixer')({
+        plugins: [
+          require('autoprefixer')({
             overrideBrowserslist: ['last 1 version', 'ie >= 11'],
-          });
-          return enableRTL ? [autoPrefixer, rtlcss] : [autoPrefixer];
-        },
+          }),
+        ],
         sourceMap: options.isProduction,
       },
     },
