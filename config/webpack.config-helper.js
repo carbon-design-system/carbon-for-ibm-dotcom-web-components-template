@@ -8,7 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const rtlcss = require('rtlcss');
+const RtlCssPlugin = require('rtlcss-webpack-plugin');
 
 const dotenv = require('dotenv').config({ path: __dirname + '/../.env' });
 
@@ -107,34 +107,8 @@ function _renderPageEntries() {
       renderedPages.push(
         new HtmlWebpackPlugin({
           hash: true,
-          inject: true,
+          inject: false,
           template: page.template,
-          templateParameters: (compilation, assets, assetTags, options) => {
-            // this will add in rtlcss if it is in the list of pages to add under `rtlLangs`
-            if (enableRTL) {
-              compilation.options.module.rules.forEach((rule, ruleIdx) => {
-                if (rule.use) {
-                  rule.use.forEach((loader, loaderIdx) => {
-                    if (loader.loader === 'postcss-loader') {
-                      compilation.options.module.rules[ruleIdx].use[
-                        loaderIdx
-                      ].options.plugins.push(rtlcss);
-                    }
-                  });
-                }
-              });
-            }
-
-            return {
-              compilation,
-              webpackConfig: compilation.options,
-              htmlWebpackPlugin: {
-                tags: assetTags,
-                files: assets,
-                options,
-              },
-            };
-          },
           filename: `./${language}/${page.output}`,
           data: languages[language][page.translationKey],
           chunks: page.chunks,
@@ -177,6 +151,9 @@ module.exports = (options) => {
       // ]),
       new MiniCssExtractPlugin({
         filename: './assets/css/[name].css',
+      }),
+      new RtlCssPlugin({
+        filename: './assets/css/[name].rtl.css',
       }),
       new Webpack.DefinePlugin({
         'process.env': JSON.stringify(

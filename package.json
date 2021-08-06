@@ -47,6 +47,7 @@
     "postcss-loader": "^3.0.0",
     "prettier": "^2.1.2",
     "rtlcss": "^2.6.0",
+    "rtlcss-webpack-plugin": "^4.0.6",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "stylelint": "^13.7.2",
@@ -57,7 +58,7 @@
   },
   "dependencies": {
     "@carbon/grid": "^10.15.0",
-    "@carbon/ibmdotcom-web-components": "^1.7.0",
+    "@carbon/ibmdotcom-web-components": "^1.8.0-rc.0",
     "@carbon/type": "^10.13.0",
     "carbon-web-components": "^1.7.1",
     "intl": "^1.2.5",
