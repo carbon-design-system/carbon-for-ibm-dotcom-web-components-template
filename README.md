@@ -192,8 +192,13 @@ SASS_PATH=node_modules:src
 
 ## Right-to-Left (RTL)
 
-Right-to-left rendering is supported, to enable set the `ENABLE_RTL` environment
-variable to `true`.
+Right-to-left rendering is supported, and is automatically set for the following
+language codes:
+
+- `ar`
+
+For example, creating Arabic pages for Saudi Arabia would be auto-generated in
+RTL for any locale content under `/src/locales/ar-sa`.
 
 ## Things to Note
 

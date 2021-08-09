@@ -2,13 +2,14 @@
 const path = require('path');
 const fs = require('fs');
 const Webpack = require('webpack');
+const sass = require('node-sass');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const RtlCssPlugin = require('rtlcss-webpack-plugin');
+const rtlcss = require('rtlcss');
 
 const dotenv = require('dotenv').config({ path: __dirname + '/../.env' });
 
@@ -95,7 +96,7 @@ const languages = _getLanguageFiles();
  * @returns {{renderedPages: *[], chunkEntries: {}}}
  * @private
  */
-function _renderPageEntries() {
+function _renderPageEntries(options) {
   const pages = require('../src/pages');
   let renderedPages = [];
   let chunkEntries = {};
@@ -104,20 +105,28 @@ function _renderPageEntries() {
     Object.keys(languages).map((language) => {
       const lc = language.substring(0, 2);
       const enableRTL = rtlLangs.indexOf(lc) !== -1;
-      renderedPages.push(
-        new HtmlWebpackPlugin({
-          hash: true,
-          inject: false,
-          template: page.template,
-          filename: `./${language}/${page.output}`,
-          data: languages[language][page.translationKey],
-          chunks: page.chunks,
-          title: page.content.title,
-          description: page.content.description,
-          altlangRootPath: altLang,
-          enableRTL: enableRTL,
-        })
-      );
+
+      // Will only build the LTR or RTL pages separately
+      if (
+        (options.buildRTL && enableRTL) ||
+        (!options.buildRTL && !enableRTL)
+      ) {
+        renderedPages.push(
+          new HtmlWebpackPlugin({
+            hash: true,
+            inject: true,
+            template: page.template,
+            filename: `./${language}/${page.output}`,
+            data: languages[language][page.translationKey],
+            chunks: page.chunks,
+            title: page.content.title,
+            description: page.content.description,
+            altlangRootPath: altLang,
+            enableRTL: enableRTL,
+          })
+        );
+      }
+
       chunkEntries = Object.assign({}, chunkEntries, page.chunkEntry);
     });
   }
@@ -125,15 +134,19 @@ function _renderPageEntries() {
   return { renderedPages, chunkEntries };
 }
 
-/**
- * Stores the page entry data for webpack
- *
- * @type {{renderedPages: *[], chunkEntries: {}}}
- */
-const pages = _renderPageEntries();
-
 module.exports = (options) => {
+  const pages = _renderPageEntries(options);
+
   const dest = path.join(__dirname, '../dist');
+
+  const hostPseudo = require('../tools/postcss-fix-host-pseudo')();
+  const autoprefixer = require('autoprefixer')({
+    overrideBrowserslist: ['last 1 version', 'ie >= 11'],
+  });
+
+  const postcssPlugins = options.buildRTL
+    ? [rtlcss, hostPseudo, autoprefixer]
+    : [hostPseudo, autoprefixer];
 
   let webpackConfig = {
     devtool: options.devtool,
@@ -144,16 +157,16 @@ module.exports = (options) => {
     },
     plugins: [
       new CopyWebpackPlugin([
-        { from: './src/assets/images', to: './assets/images' },
+        {
+          from: './src/assets',
+          to: './assets',
+          globOptions: {
+            ignore: ['./src/assets/scss/**'],
+          },
+        },
       ]),
-      // new CopyWebpackPlugin([
-      //   {from: './src/assets/fonts', to: './assets/fonts'}
-      // ]),
       new MiniCssExtractPlugin({
         filename: './assets/css/[name].css',
-      }),
-      new RtlCssPlugin({
-        filename: './assets/css/[name].rtl.css',
       }),
       new Webpack.DefinePlugin({
         'process.env': JSON.stringify(
@@ -207,73 +220,68 @@ module.exports = (options) => {
             outputPath: './assets/images',
           },
         },
+        {
+          test: /\.scss$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 2,
+                sourceMap: options.isProduction,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: postcssPlugins,
+                },
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                implementation: sass,
+                webpackImporter: false,
+                sassOptions: {
+                  includePaths: [
+                    path.resolve(__dirname, '..', 'node_modules'),
+                    path.resolve(__dirname, '../../../', 'node_modules'),
+                  ],
+                  additionalData: `
+                    $feature-flags: (
+                      enable-css-custom-properties: true
+                    );
+                  `,
+                },
+              },
+            },
+          ],
+        },
       ],
     },
   };
 
-  webpackConfig.optimization = {
-    ...webpackConfig.optimization,
-    splitChunks: {
-      chunks: 'all',
-      minSize: 30 * 1024,
-      maxSize: 1024 * 1024,
-    },
-    minimizer: [
-      new TerserPlugin({
-        sourceMap: options.isProduction,
-        terserOptions: {
-          mangle: false,
-        },
-      }),
-    ],
-  };
-
-  const styleLoaders = [
-    {
-      loader: 'css-loader',
-      options: {
-        importLoaders: 2,
-        sourceMap: options.isProduction,
-      },
-    },
-    {
-      loader: 'postcss-loader',
-      options: {
-        plugins: [
-          require('autoprefixer')({
-            overrideBrowserslist: ['last 1 version', 'ie >= 11'],
-          }),
-        ],
-        sourceMap: options.isProduction,
-      },
-    },
-  ];
-
-  webpackConfig.module.rules.push({
-    test: /\.scss$/,
-    use: [
-      {
-        loader: MiniCssExtractPlugin.loader,
-      },
-      ...styleLoaders,
-      {
-        loader: options.isProduction ? 'sass-loader' : 'fast-sass-loader',
-        options: {
-          includePaths: [
-            path.resolve(__dirname, '..', 'node_modules'),
-            path.resolve(__dirname, '../../../', 'node_modules'),
-          ],
-          data: `
-              $feature-flags: (
-                enable-css-custom-properties: true
-              );
-            `,
-        },
-      },
-    ],
-  });
-
   if (options.isProduction) {
+    webpackConfig.optimization = {
+      splitChunks: {
+        chunks: 'all',
+        minSize: 30 * 1024,
+        maxSize: 1024 * 1024,
+      },
+      minimizer: [
+        new TerserPlugin({
+          sourceMap: options.isProduction,
+          terserOptions: {
+            mangle: false,
+          },
+        }),
+      ],
+    };
+
     webpackConfig.plugins.push(
       new CleanWebpackPlugin(['../dist'], {
         verbose: true,

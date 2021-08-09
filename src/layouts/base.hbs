@@ -58,20 +58,6 @@
     }
   </style>
 
-  {{#if htmlWebpackPlugin.options.enableRTL }}
-    {{#each htmlWebpackPlugin.files.css}}
-      {{#contains ".rtl.css" this }}
-        <link href="{{ this }}" rel="stylesheet" />
-      {{/contains}}
-    {{/each}}
-  {{else}}
-    {{#each htmlWebpackPlugin.files.css}}
-      {{#no_contains ".rtl.css" this }}
-        <link href="{{ this }}" rel="stylesheet" />
-      {{/no_contains}}
-    {{/each}}
-  {{/if}}
-
   <!-- IBM Tag Management and Site Analytics -->
   <script src="//1.www.s81c.com/common/stats/ibm-common.js" async="async"></script>
 </head>
@@ -87,8 +73,5 @@
   </dds-dotcom-shell-container>
 {{/if}}>
 
-{{#each htmlWebpackPlugin.files.js}}
-  <script src="{{ this }}" defer></script>
-{{/each}}
 </body>
 </html>
