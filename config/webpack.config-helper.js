@@ -5,16 +5,14 @@ const Webpack = require('webpack');
 const sass = require('node-sass');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const rtlcss = require('rtlcss');
 
 const dotenv = require('dotenv').config({ path: __dirname + '/../.env' });
 
 /**
- * Langauge codes that will enable RTL
+ * Language codes that will enable RTL
  *
  * @type {string[]}
  */
@@ -114,7 +112,7 @@ function _renderPageEntries(options) {
         renderedPages.push(
           new HtmlWebpackPlugin({
             hash: true,
-            inject: true,
+            inject: false,
             template: page.template,
             filename: `./${language}/${page.output}`,
             data: languages[language][page.translationKey],
@@ -148,34 +146,61 @@ module.exports = (options) => {
     ? [rtlcss, hostPseudo, autoprefixer]
     : [hostPseudo, autoprefixer];
 
-  let webpackConfig = {
-    devtool: options.devtool,
-    entry: pages.chunkEntries,
-    output: {
-      path: dest,
-      filename: './assets/js/[name].js',
-    },
-    plugins: [
+  const webpackPlugins = [
+    new MiniCssExtractPlugin({
+      filename: options.buildRTL
+        ? './assets/css/[name].rtl.css'
+        : './assets/css/[name].css',
+    }),
+    new Webpack.DefinePlugin({
+      'process.env': JSON.stringify(
+        Object.assign({}, dotenv.parsed || {}, {
+          NODE_ENV: options.isProduction ? 'production' : 'development',
+        })
+      ),
+    }),
+  ];
+
+  // only copy assets during LTR build
+  if (!options.buildRTL) {
+    webpackPlugins.push(
       new CopyWebpackPlugin([
         {
           from: './src/assets',
           to: './assets',
           globOptions: {
-            ignore: ['./src/assets/scss/**'],
+            ignore: ['**/scss/**/*.scss'],
           },
         },
-      ]),
-      new MiniCssExtractPlugin({
-        filename: './assets/css/[name].css',
-      }),
-      new Webpack.DefinePlugin({
-        'process.env': JSON.stringify(
-          Object.assign({}, dotenv.parsed || {}, {
-            NODE_ENV: options.isProduction ? 'production' : 'development',
-          })
-        ),
-      }),
-    ],
+      ])
+    );
+  }
+
+  // replace .css.js files to load the RTL version
+  if (options.buildRTL) {
+    webpackPlugins.push(
+      new Webpack.NormalModuleReplacementPlugin(/\.css.js$/, (resource) => {
+        const rtl_version = resource.request.replace(
+          /\.css.js$/,
+          '.rtl.css.js'
+        );
+        if (fs.existsSync(path.resolve(resource.context, rtl_version))) {
+          resource.request = rtl_version;
+        }
+      })
+    );
+  }
+
+  let webpackConfig = {
+    devtool: options.devtool,
+    entry: pages.chunkEntries,
+    output: {
+      path: dest,
+      filename: options.buildRTL
+        ? './assets/js/[name].rtl.js'
+        : './assets/js/[name].js',
+    },
+    plugins: webpackPlugins,
     resolve: {
       modules: ['node_modules'],
     },
@@ -247,10 +272,7 @@ module.exports = (options) => {
                 implementation: sass,
                 webpackImporter: false,
                 sassOptions: {
-                  includePaths: [
-                    path.resolve(__dirname, '..', 'node_modules'),
-                    path.resolve(__dirname, '../../../', 'node_modules'),
-                  ],
+                  includePaths: [path.resolve(__dirname, '..', 'node_modules')],
                   additionalData: `
                     $feature-flags: (
                       enable-css-custom-properties: true
@@ -281,61 +303,6 @@ module.exports = (options) => {
         }),
       ],
     };
-
-    webpackConfig.plugins.push(
-      new CleanWebpackPlugin(['../dist'], {
-        verbose: true,
-        dry: false,
-      })
-    );
-  } else {
-    webpackConfig.plugins.push(new Webpack.HotModuleReplacementPlugin());
-
-    webpackConfig.module.rules.push({
-      test: /\.js$/,
-      use: 'eslint-loader',
-      exclude: /node_modules/,
-    });
-
-    webpackConfig.devServer = {
-      port: options.port,
-      contentBase: dest,
-      historyApiFallback: true,
-      compress: options.isProduction,
-      inline: !options.isProduction,
-      hot: !options.isProduction,
-      stats: {
-        chunks: false,
-      },
-    };
-
-    webpackConfig.plugins.push(
-      new BrowserSyncPlugin(
-        {
-          host: 'localhost',
-          port: 3000,
-          proxy: 'http://localhost:8081/',
-          files: [
-            {
-              match: ['**/*.hbs'],
-              fn: function (event, file) {
-                if (
-                  event === 'change' ||
-                  event === 'add' ||
-                  event === 'unlink'
-                ) {
-                  const bs = require('browser-sync').get('bs-webpack-plugin');
-                  bs.reload();
-                }
-              },
-            },
-          ],
-        },
-        {
-          reload: false,
-        }
-      )
-    );
   }
 
   webpackConfig.plugins = webpackConfig.plugins.concat(pages.renderedPages);

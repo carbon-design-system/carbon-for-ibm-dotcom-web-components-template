@@ -17,9 +17,9 @@
   <meta name="robots" content="index,follow" />
 
   {{#if htmlWebpackPlugin.options.data.base_languages }}
-    <link rel="alternate" hrefLang="x-default" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/{{htmlWebpackPlugin.options.data.base_lang_default}}/index.html"/>
+  <link rel="alternate" hrefLang="x-default" href="{{ htmlWebpackPlugin.options.altlangRootPath }}/{{htmlWebpackPlugin.options.data.base_lang_default}}/index.html"/>
     {{#each htmlWebpackPlugin.options.data.base_languages}}
-      <link rel="alternate" hrefLang="{{this}}" href="{{ ../htmlWebpackPlugin.options.altlangRootPath }}/{{this}}/index.html"/>
+  <link rel="alternate" hrefLang="{{this}}" href="{{ ../htmlWebpackPlugin.options.altlangRootPath }}/{{this}}/index.html"/>
     {{/each}}
   {{/if}}
 
@@ -58,6 +58,20 @@
     }
   </style>
 
+  {{#if htmlWebpackPlugin.options.enableRTL }}
+    {{#each htmlWebpackPlugin.files.css}}
+      {{#contains ".rtl.css" this }}
+        <link href="{{ this }}" rel="stylesheet" />
+      {{/contains}}
+    {{/each}}
+  {{else}}
+    {{#each htmlWebpackPlugin.files.css}}
+      {{#no_contains ".rtl.css" this }}
+        <link href="{{ this }}" rel="stylesheet" />
+      {{/no_contains}}
+    {{/each}}
+  {{/if}}
+
   <!-- IBM Tag Management and Site Analytics -->
   <script src="//1.www.s81c.com/common/stats/ibm-common.js" async="async"></script>
 </head>
@@ -71,7 +85,20 @@
   <dds-dotcom-shell-container disable-locale-button="true">
   {{> @partial-block }}
   </dds-dotcom-shell-container>
-{{/if}}>
+{{/if}}
 
+{{#if htmlWebpackPlugin.options.enableRTL }}
+  {{#each htmlWebpackPlugin.files.js}}
+    {{#contains ".rtl.js" this }}
+  <script src="{{ this }}" defer></script>
+    {{/contains}}
+  {{/each}}
+{{else}}
+  {{#each htmlWebpackPlugin.files.js}}
+    {{#no_contains ".rtl.js" this }}
+  <script src="{{ this }}" defer></script>
+    {{/no_contains}}
+  {{/each}}
+{{/if}}
 </body>
 </html>
