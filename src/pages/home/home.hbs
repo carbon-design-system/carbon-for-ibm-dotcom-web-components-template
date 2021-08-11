@@ -47,42 +47,23 @@
         <dds-content-block-complementary>
           <dds-link-list type="default">
             <dds-link-list-heading>Tutorial</dds-link-list-heading>
-            <dds-link-list-item-card href="https://example.com" cta-type="local">
+            <dds-link-list-item-card-cta href="https://example.com" cta-type="local">
               <p>{{i18n "sample_copy_short"}}</p>
               <dds-card-cta-footer>
-                <svg
-                  slot="icon"
-                  focusable="false"
-                  preserveAspectRatio="xMidYMid meet"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  aria-hidden="true"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
-                </svg>
               </dds-card-cta-footer>
-            </dds-link-list-item-card>
-            <dds-link-list-item-card href="https://example.com" cta-type="external">
+            </dds-link-list-item-card-cta>
+            <dds-link-list-item-card-cta href="https://example.com" cta-type="external">
               <p>{{i18n "sample_copy_short"}}</p>
               <dds-card-cta-footer>
-                <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
-                     fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 32 32"
-                     class="bx--card__cta dds-ce--cta__icon">&lt;!&ndash;&ndash;&gt;<path
-                  d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z"></path>
-                  <path d="M20 2L20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2z"></path>
-                </svg>
               </dds-card-cta-footer>
-            </dds-link-list-item-card>
+            </dds-link-list-item-card-cta>
           </dds-link-list>
         </dds-content-block-complementary>
 
         <dds-content-group-cards>
           <dds-content-group-heading>{{i18n "content_group_with_cards"}}</dds-content-group-heading>
 
-          <dds-content-group-cards-item href="www.ibm.com">
+          <dds-content-group-cards-item href="http://example.com">
             <dds-card-heading>
               {{i18n "sample_copy_short"}}
             </dds-card-heading>
@@ -97,7 +78,7 @@
             </dds-card-footer>
           </dds-content-group-cards-item>
 
-          <dds-content-group-cards-item href="www.ibm.com">
+          <dds-content-group-cards-item href="http://example.com">
             <dds-card-heading>
               {{i18n "sample_copy_short"}}
             </dds-card-heading>
@@ -112,7 +93,7 @@
             </dds-card-footer>
           </dds-content-group-cards-item>
 
-          <dds-content-group-cards-item href="www.ibm.com">
+          <dds-content-group-cards-item href="http://example.com">
             <dds-card-heading>
               {{i18n "sample_copy_short"}}
             </dds-card-heading>
@@ -127,7 +108,7 @@
             </dds-card-footer>
           </dds-content-group-cards-item>
 
-          <dds-content-group-cards-item href="www.ibm.com">
+          <dds-content-group-cards-item href="http://example.com">
             <dds-card-heading>
               {{i18n "sample_copy_short"}}
             </dds-card-heading>
@@ -402,7 +383,7 @@
             <dds-image slot='image' alt='Image alt text' default-src='../assets/images/card-sample-1.jpg'></dds-image>
             <dds-card-eyebrow>{{i18n "sample_copy_eyebrow"}}</dds-card-eyebrow>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -416,14 +397,14 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
           <dds-card-group-item href='https://example.com'>
             <dds-image slot='image' alt='Image alt text' default-src='../assets/images/card-sample-1.jpg'></dds-image>
             <dds-card-eyebrow>{{i18n "sample_copy_eyebrow"}}</dds-card-eyebrow>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -437,14 +418,14 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
           <dds-card-group-item href='https://example.com'>
             <dds-image slot='image' alt='Image alt text' default-src='../assets/images/card-sample-1.jpg'></dds-image>
             <dds-card-eyebrow>{{i18n "sample_copy_eyebrow"}}</dds-card-eyebrow>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -458,14 +439,14 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
           <dds-card-group-item href='https://example.com'>
             <dds-image slot='image' alt='Image alt text' default-src='../assets/images/card-sample-1.jpg'></dds-image>
             <dds-card-eyebrow>{{i18n "sample_copy_eyebrow"}}</dds-card-eyebrow>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -479,14 +460,14 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
           <dds-card-group-item href='https://example.com'>
             <dds-image slot='image' alt='Image alt text' default-src='../assets/images/card-sample-1.jpg'></dds-image>
             <dds-card-eyebrow>{{i18n "sample_copy_eyebrow"}}</dds-card-eyebrow>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -500,7 +481,7 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
         </dds-card-group>
       </dds-card-section-images>
@@ -511,7 +492,7 @@
           <dds-card-group-item href='https://example.com'>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
             <p>{{i18n "sample_copy_medium"}}</p>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -525,13 +506,13 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
           <dds-card-group-item href='https://example.com'>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
             <p>{{i18n "sample_copy_medium"}}</p>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -545,13 +526,13 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
           <dds-card-group-item href='https://example.com'>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
             <p>{{i18n "sample_copy_medium"}}</p>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -565,13 +546,13 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
           <dds-card-group-item href='https://example.com'>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
             <p>{{i18n "sample_copy_medium"}}</p>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -585,13 +566,13 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
           <dds-card-group-item href='https://example.com'>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
             <p>{{i18n "sample_copy_medium"}}</p>
-            <dds-card-footer slot='footer'>
+            <dds-card-cta-footer slot='footer'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -605,12 +586,12 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
           <dds-card-group-item href='https://example.com' color-scheme='inverse'>
             <dds-card-heading>{{i18n "sample_copy_short"}}</dds-card-heading>
-            <dds-card-footer slot='footer' color-scheme='inverse'>
+            <dds-card-cta-footer slot='footer' color-scheme='inverse'>
               <svg
                 slot="icon"
                 focusable="false"
@@ -624,7 +605,7 @@
               >
                 <path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path>
               </svg>
-            </dds-card-footer>
+            </dds-card-cta-footer>
           </dds-card-group-item>
 
         </dds-card-group>
