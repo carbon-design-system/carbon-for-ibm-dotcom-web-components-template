@@ -53,6 +53,7 @@ import '@carbon/ibmdotcom-web-components/es/components/content-item-horizontal/i
 
 // CTA
 import '@carbon/ibmdotcom-web-components/es/components/cta/index.js';
+import '@carbon/ibmdotcom-web-components/es/components/cta/link-list-item-card-cta.js';
 import '@carbon/ibmdotcom-web-components/es/components/cta/video-cta-container.js';
 
 // Feature Card

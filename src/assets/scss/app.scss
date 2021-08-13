@@ -55,7 +55,7 @@ dds-cta-section-item {
 .bx--g10-container {
   @include carbon--theme($carbon--theme--g10, true);
 
-  background-color: $ui-background;
+  background-color: var(--cds-ui-background);
   padding-left: 1rem;
 }
 
