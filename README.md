@@ -1,28 +1,34 @@
 <h1 align="center"> Carbon for IBM.com Web Components with HTML Template</h1>
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
 - [Overview](#overview)
 - [Getting Started](#getting-started)
 - [Creating new pages](#creating-new-pages)
+  - [Page Language / i18n Support](#page-language--i18n-support)
+- [SASS compilation and `carbon-components`](#sass-compilation-and-carbon-components)
+- [Right-to-Left (RTL)](#right-to-left-rtl)
 - [Things to Note](#things-to-note)
-  - [Page Language](#page-language)
   - [Digital Data Object](#digital-data-object)
-  - [Meta Tags & IBM.com Tag Management and Site Analytics](#meta-tags-and-analytics)
+  - [Meta Tags and Analytics](#meta-tags-and-analytics)
+- [Upgrading from the Template](#upgrading-from-the-template)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Overview
 
 This is a HTML Template utilizing Carbon for IBM.com Web Components. It contains
 a basic WebPack setup using Handlebars for page management, which includes the
-
-[DotcomShell](https://github.com/carbon-design-system/carbon-for-ibm-dotcom/blob/master/packages/web-components/src/components/DotcomShell/README.md),
-
+[dds-dotcom-shell](https://www.ibm.com/standards/carbon/web-components/?path=/story/components-dotcom-shell--default),
 along with other various patterns and components available in Carbon for
 IBM.com.
 
 ## Getting Started
 
-Get the code by cloning this repo using git
+Get the code by clicking `Use this template`, or clone this repo using git:
 
 ```bash
 
@@ -171,24 +177,14 @@ the meantime you can add
 the following to your `.env` file to resolve:
 
 ```
-
 SASS_PATH=node_modules:src
-
 ```
 
 > **Note:** For Windows, the syntax is slightly different
 
->
-
-> ```
->
-> ```
-
-> SASS_PATH=./node_modules;./src
-
-> ```
->
-> ```
+```
+SASS_PATH=./node_modules;./src
+```
 
 ## Right-to-Left (RTL)
 
@@ -220,38 +216,33 @@ The template has a placeholder DDO you can define located in
 `pages/data/DDO.json. Example values shown below:
 
 ```javascript
-
 <script>
-
-  digitalData = {
+  window.digitalData = {
     page: {
-			category: {
-				primaryCategory: '' // e.g. SB03
-			},
-
-			pageInfo: {
-				effectiveDate: '', // e.g. 2014-11-19
-				expiryDate: '', // e.g. 2017-11-19
-				language: '', // e.g. en-US
-				publishDate: '', // e.g. 2014-11-19
-				publisher: '', // e.g. IBM Corporation
-				version: 'Carbon for IBM.com',
-				ibm: {
-					contentDelivery: '', // e.g. ECM/Filegen
-					contentProducer: '', // e.g. ECM/IConS Adopter 34 - GS83J2343G3H3ERG - 11/19/2014 05:14:02 PM
-					country: '', // e.g. US
-					industry: '', // e.g. B,U
-					owner: '', // e.g. Some Person/City/IBM
-					siteID: '', // e.g. MySiteID
-					subject: '', // e.g. SW492
-					type: '' // e.g CT305
-				}
+      category: {
+        primaryCategory: '' // e.g. SB03
+      },
+      pageInfo: {
+        effectiveDate: '', // e.g. 2014-11-19
+        expiryDate: '', // e.g. 2017-11-19
+        language: '', // e.g. en-US
+        publishDate: '', // e.g. 2014-11-19
+        publisher: '', // e.g. IBM Corporation
+        version: 'Carbon for IBM.com',
+        ibm: {
+          contentDelivery: '', // e.g. ECM/Filegen
+          contentProducer: '', // e.g. ECM/IConS Adopter 34 - GS83J2343G3H3ERG - 11/19/2014 05:14:02 PM
+          country: '', // e.g. US
+          industry: '', // e.g. B,U
+          owner: '', // e.g. Some Person/City/IBM
+          siteID: '', // e.g. MySiteID
+          subject: '', // e.g. SW492
+          type: '' // e.g CT305
+        }
       }
     }
   };
-
 </script>
-
 ```
 
 ### Meta Tags and Analytics
