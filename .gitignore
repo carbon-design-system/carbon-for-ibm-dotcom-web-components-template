@@ -19,8 +19,11 @@ node_modules/
 # dotenv environment variables file
 .env
 
-# IDE
+# Editor
+.DS_Store
+*.swp
 .idea
+.vscode
 
 # Output
 dist
