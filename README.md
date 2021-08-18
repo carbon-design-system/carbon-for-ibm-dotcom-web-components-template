@@ -36,7 +36,7 @@ git clone https://github.com/carbon-design-system/carbon-for-ibm-dotcom-web-comp
 ```
 
 Once cloned, go to the project directory to install dependencies and build the
-project
+project (If you are using Windows Powershell, you have to switch to CMD or Bash, or run the commands separately)
 
 ```bash
 $ yarn && yarn build
