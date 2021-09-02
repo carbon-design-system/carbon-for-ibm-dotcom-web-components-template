@@ -17,14 +17,14 @@
     "react"
   ],
   "peerDependencies": {
-    "stylelint": "^9.10.1"
+    "stylelint": "^13.13.1"
   },
   "dependencies": {
     "stylelint-config-prettier": "^4.0.0",
-    "stylelint-prettier": "^1.0.6",
-    "stylelint-scss": "^3.5.3"
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^3.20.1"
   },
   "devDependencies": {
-    "stylelint": "^9.10.1"
+    "stylelint": "^13.13.1"
   }
 }
