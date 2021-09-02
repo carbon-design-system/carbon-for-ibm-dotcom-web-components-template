@@ -164,15 +164,17 @@ module.exports = (options) => {
   // only copy assets during LTR build
   if (!options.buildRTL) {
     webpackPlugins.push(
-      new CopyWebpackPlugin([
-        {
-          from: './src/assets',
-          to: './assets',
-          globOptions: {
-            ignore: ['**/scss/**/*.scss'],
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: './src/assets',
+            to: './assets',
+            globOptions: {
+              ignore: ['**/scss/**/*.scss'],
+            },
           },
-        },
-      ])
+        ],
+      })
     );
   }
 
@@ -192,6 +194,7 @@ module.exports = (options) => {
   }
 
   let webpackConfig = {
+    mode: 'production',
     devtool: options.devtool,
     entry: pages.chunkEntries,
     output: {

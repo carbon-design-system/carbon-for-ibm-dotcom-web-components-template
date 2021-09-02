@@ -24,6 +24,8 @@ const _webpackConfig = require('./webpack.config-helper')({
   buildRTL: false,
 });
 
+_webpackConfig.mode = 'development';
+
 _webpackConfig.plugins.push(new Webpack.HotModuleReplacementPlugin());
 
 _webpackConfig.module.rules.push({
@@ -34,14 +36,11 @@ _webpackConfig.module.rules.push({
 
 _webpackConfig.devServer = {
   port: 8081,
-  contentBase: path.join(__dirname, '../dist'),
-  historyApiFallback: true,
-  compress: true,
-  inline: false,
-  hot: false,
-  stats: {
-    chunks: false,
+  static: {
+    directory: path.join(__dirname, '../dist'),
   },
+  compress: true,
+  hot: false,
 };
 
 _webpackConfig.plugins.push(
