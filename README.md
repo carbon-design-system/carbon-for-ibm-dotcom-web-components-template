@@ -14,6 +14,7 @@
 - [Things to Note](#things-to-note)
   - [Digital Data Object](#digital-data-object)
   - [Meta Tags and Analytics](#meta-tags-and-analytics)
+  - [Carbon Theme Zoning Classes](#carbon-theme-zoning-classes)
 - [Upgrading from the Template](#upgrading-from-the-template)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -252,6 +253,44 @@ IBM.com Tag Management and Site Analytics Script
   src="//1.www.s81c.com/common/stats/ibm-common.js"
   async="async"
 ></script>
+```
+
+### Carbon Theme Zoning Classes
+
+By default, the base template offers a reference to the Carbon for IBM.com theme
+CDN style helper that allows you to easily define the theme of a particular
+component using
+[Carbon theme utility classes](https://www.ibm.com/standards/carbon/developing/carbon-cdn-style-helpers/#carbon-theme-zoning-classes).
+
+### Available classes
+
+| Theme | Class name              |
+| ----- | ----------------------- |
+| white | `.dds-theme-zone-white` |
+| g10   | `.dds-theme-zone-g10`   |
+| g90   | `.dds-theme-zone-g90`   |
+| g100  | `.dds-theme-zone-g100`  |
+
+### Example usage
+
+Leadspace component using `g100` theme.
+
+```html
+<dds-leadspace size="medium" class="dds-theme-zone-g100">
+  <dds-leadspace-heading>LeadSpace title</dds-leadspace-heading>
+  LeadSpace copy
+</dds-leadspace>
+```
+
+This is an optional feature, therefore if you decided to use the import method
+instead of leveraging from the existing CDN artifact, you can simply remove this
+line from the `base.hbs` file.
+
+```html
+<link
+  rel="stylesheet"
+  href="https://1.www.s81c.com/common/carbon-for-ibm-dotcom/tag/v1/latest/themes.css"
+/>
 ```
 
 ## Upgrading from the Template
