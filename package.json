@@ -35,7 +35,7 @@
     "dotenv": "^8.2.0",
     "eslint": "^4.19.1",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-jsdoc": "^30.6.3",
+    "eslint-plugin-jsdoc": "^30.7.13",
     "file-loader": "^1.1.11",
     "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.0",
