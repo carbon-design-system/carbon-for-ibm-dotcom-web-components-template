@@ -48,7 +48,7 @@
     "postcss-loader": "4.3.0",
     "postcss-selector-parser": "^6.0.6",
     "prettier": "^2.1.2",
-    "rtlcss": "^2.6.0",
+    "rtlcss": "^3.0.0",
     "sass-loader": "^10.2.0",
     "stylelint": "^14.0.0",
     "terser-webpack-plugin": "^4.1.0",
