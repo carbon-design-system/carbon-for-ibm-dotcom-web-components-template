@@ -14,7 +14,7 @@
     "components"
   ],
   "peerDependencies": {
-    "eslint": "^8.0.0"
+    "eslint": "^6.8.0"
   },
   "dependencies": {
     "babel-eslint": "^10.1.0",
