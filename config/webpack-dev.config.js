@@ -10,6 +10,7 @@
 'use strict';
 const path = require('path');
 const Webpack = require('webpack');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 /**
@@ -28,12 +29,6 @@ _webpackConfig.mode = 'development';
 
 _webpackConfig.plugins.push(new Webpack.HotModuleReplacementPlugin());
 
-_webpackConfig.module.rules.push({
-  test: /\.js$/,
-  use: 'eslint-loader',
-  exclude: /node_modules/,
-});
-
 _webpackConfig.devServer = {
   port: 8081,
   static: {
@@ -42,6 +37,8 @@ _webpackConfig.devServer = {
   compress: true,
   hot: false,
 };
+
+_webpackConfig.plugins.push(new ESLintWebpackPlugin());
 
 _webpackConfig.plugins.push(
   new BrowserSyncPlugin(
