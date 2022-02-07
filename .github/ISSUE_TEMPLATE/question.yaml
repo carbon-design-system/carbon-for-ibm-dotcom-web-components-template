@@ -3,7 +3,7 @@ description:
   Usage question or discussion about the Carbon for IBM.com Web Components Template.
 title: '[YOUR TITLE]: Brief description'
 assignees:
-  - jeffchew,ljcarot,shixiedesign,RobertaJHahn
+  - jeffchew,ljcarot
 labels: ['question']
 body:
   - type: markdown
