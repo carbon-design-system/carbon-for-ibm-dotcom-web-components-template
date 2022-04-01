@@ -959,10 +959,10 @@
     marked "^4.0.10"
     window-or-global "^1.0.1"
 
-"@carbon/ibmdotcom-styles@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-styles/-/ibmdotcom-styles-1.32.0.tgz#6ce48cf3507f582fb9cd5680c6e8be6188f5fc6f"
-  integrity sha512-j63tzuj1tWqWSviHVSJKdI6fIEOzwLzR65pA3ZbTMURyOSrVLi1ZR3DqWuA9CIU/Wl4NRKf9OEbBszuW0uB/Xg==
+"@carbon/ibmdotcom-styles@1.32.1":
+  version "1.32.1"
+  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-styles/-/ibmdotcom-styles-1.32.1.tgz#8e45ea3d06a555d81d6270f8dffea8659e552048"
+  integrity sha512-B36gNEoBXwjQ2UcBuIRwxV1MNhGBSdjrKHhZFNkj8quyvxyRNbjVtQEwxF1sttME03TRAC3vTp6HRwVOjzr6qw==
   dependencies:
     "@carbon/grid" "10.43.0"
     "@carbon/icons-react" "10.48.0"
@@ -971,7 +971,7 @@
     "@carbon/motion" "10.29.0"
     "@carbon/telemetry" "0.1.0"
     "@carbon/themes" "10.53.1"
-    "@carbon/type" "10.43.1"
+    "@carbon/type" "10.44.0"
     carbon-components "10.55.1"
 
 "@carbon/ibmdotcom-utilities@1.31.0":
@@ -987,10 +987,10 @@
     marked "^4.0.10"
     window-or-global "^1.0.1"
 
-"@carbon/ibmdotcom-utilities@1.32.0":
-  version "1.32.0"
-  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-utilities/-/ibmdotcom-utilities-1.32.0.tgz#bd042e038dae05bdf6188e76c314d55e264cae5d"
-  integrity sha512-Npp+jDSAYdanlY+MM7H+V8lQBtBmHAL4iZj6wap494bpMaUujeUut776HuLPbiTBfUH6gfxlxXYjdKR832XSDQ==
+"@carbon/ibmdotcom-utilities@1.32.1":
+  version "1.32.1"
+  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-utilities/-/ibmdotcom-utilities-1.32.1.tgz#3c44a04bfae9483f24af5381a0a96bb0be6c8cfe"
+  integrity sha512-3V2gFzOx5Qf0ODc7SO4fgkl9hnxXMxffATYf9djbiuiQUEYt4Fop1rMcZQ6seT+QI2jr1eRvmfA7NSYhQXFdQA==
   dependencies:
     "@carbon/telemetry" "0.1.0"
     axios "~0.21.4"
@@ -1000,14 +1000,14 @@
     marked "^4.0.10"
     window-or-global "^1.0.1"
 
-"@carbon/ibmdotcom-web-components@^1.17.0":
-  version "1.17.0"
-  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-web-components/-/ibmdotcom-web-components-1.17.0.tgz#70be0d872cd0b14bd5879118866664b7b3758ec1"
-  integrity sha512-CD+o7K7GsWta1ldUl7LULe9GUNGY/ZUBYpVjy6o4DS8PL77YJR6rImVROdkOZ4AhjDNgMALWQklycr+Cvgtl4g==
+"@carbon/ibmdotcom-web-components@^1.17.1":
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-web-components/-/ibmdotcom-web-components-1.17.1.tgz#8ab895d4a0e2a33fa675e3007952572ee7fdac8c"
+  integrity sha512-gKIyAboUnw4XhRc4aQu117x/ssyTLbbZyvHeVFikTVxWMdbqwaN5WYXeEMrGXOfTqJXIaz+HxdkHFtPmCcT2xA==
   dependencies:
     "@carbon/ibmdotcom-services" "1.32.0"
-    "@carbon/ibmdotcom-styles" "1.32.0"
-    "@carbon/ibmdotcom-utilities" "1.32.0"
+    "@carbon/ibmdotcom-styles" "1.32.1"
+    "@carbon/ibmdotcom-utilities" "1.32.1"
     "@carbon/layout" "10.37.0"
     "@carbon/telemetry" "0.1.0"
     carbon-components "10.55.1"
@@ -1102,10 +1102,10 @@
     "@carbon/type" "^10.43.1"
     color "^3.1.2"
 
-"@carbon/type@10.43.1":
-  version "10.43.1"
-  resolved "https://registry.yarnpkg.com/@carbon/type/-/type-10.43.1.tgz#6674664d19d474573ebc47eb0237bc0dcf137db2"
-  integrity sha512-zfXcmUeqXhaugDtBR0GMiS3drr4mpVZ6n2CiS8B6X6P+aTMgzjsbzgRNe5uXNFGot74IhhxgaKogFd/SBviCmg==
+"@carbon/type@10.44.0", "@carbon/type@^10.43.1":
+  version "10.44.0"
+  resolved "https://registry.yarnpkg.com/@carbon/type/-/type-10.44.0.tgz#f70944fe25b225d2dc44cea31fa2e7a400d4772c"
+  integrity sha512-sLe4e9gu2QuM8k6PrXWc9xWpH6W9Q/FJ+/IHNFpx+8zBLkBsM6dbf4o76Zw9OcV2HuAA+8K3JOpZJ4r76fw8kg==
   dependencies:
     "@carbon/grid" "^10.43.0"
     "@carbon/import-once" "^10.7.0"
@@ -1117,14 +1117,6 @@
   dependencies:
     "@carbon/import-once" "^10.6.0"
     "@carbon/layout" "^10.35.0"
-
-"@carbon/type@^10.43.1":
-  version "10.44.0"
-  resolved "https://registry.yarnpkg.com/@carbon/type/-/type-10.44.0.tgz#f70944fe25b225d2dc44cea31fa2e7a400d4772c"
-  integrity sha512-sLe4e9gu2QuM8k6PrXWc9xWpH6W9Q/FJ+/IHNFpx+8zBLkBsM6dbf4o76Zw9OcV2HuAA+8K3JOpZJ4r76fw8kg==
-  dependencies:
-    "@carbon/grid" "^10.43.0"
-    "@carbon/import-once" "^10.7.0"
 
 "@choojs/findup@^0.2.1":
   version "0.2.1"
