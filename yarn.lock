@@ -939,13 +939,13 @@
     "@carbon/import-once" "^10.6.0"
     "@carbon/layout" "^10.35.0"
 
-"@carbon/ibmdotcom-services@1.33.0":
-  version "1.33.0"
-  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-services/-/ibmdotcom-services-1.33.0.tgz#5254c8b66f562e442220f7ea6707b19f15d3f5cc"
-  integrity sha512-r9ykZsg114bFNPKxfXfyC4JOX4YYbGubRBsTHMaqpC9Pkimz3OW5KVuB48xOiOPWbkqkDqyL7oDvm2AbAAtFAw==
+"@carbon/ibmdotcom-services@1.33.1":
+  version "1.33.1"
+  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-services/-/ibmdotcom-services-1.33.1.tgz#7f4fac2ad0ac36c1177caf73f1d05d9e7f19b2a2"
+  integrity sha512-Pp2yk/9eNGVsfD/6Y493IcQJe00MD453cXNaCDX8geecQHgaFvZ2iK55kacSfTAA8YcNVtyfTGzkEBVLM+OUsA==
   dependencies:
     "@babel/runtime" "^7.5.0"
-    "@carbon/ibmdotcom-utilities" "1.33.0"
+    "@carbon/ibmdotcom-utilities" "1.33.1"
     "@carbon/telemetry" "0.1.0"
     axios "~0.21.4"
     marked "^4.0.10"
@@ -966,10 +966,10 @@
     "@carbon/type" "10.44.0"
     carbon-components "10.56.0"
 
-"@carbon/ibmdotcom-utilities@1.33.0":
-  version "1.33.0"
-  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-utilities/-/ibmdotcom-utilities-1.33.0.tgz#b0d536e65c593f572261de4d98861ce2f145c7bf"
-  integrity sha512-0o7DDhJIad1r+2PDN+Xkrvfm+SC7GcRG6DtIT8NseTbUdRgdMDv6V+9K0KjIqc1cU9P7HtyUf2TB0BMo0svLqw==
+"@carbon/ibmdotcom-utilities@1.33.1":
+  version "1.33.1"
+  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-utilities/-/ibmdotcom-utilities-1.33.1.tgz#5f4870f1415244929e26c9016ac08db159a31fa3"
+  integrity sha512-F4G6Vwo02kRiMAsO+7/lJIrHl4Me1DrxqYEASWFRdWS0WGEMLSIuLFg/FDnLFAIQZE4fy6H+AWfDea3WJM3baw==
   dependencies:
     "@carbon/telemetry" "0.1.0"
     axios "~0.21.4"
@@ -979,14 +979,14 @@
     marked "^4.0.10"
     window-or-global "^1.0.1"
 
-"@carbon/ibmdotcom-web-components@^1.18.0":
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-web-components/-/ibmdotcom-web-components-1.18.0.tgz#f3fff09822b7f8bf2024733bf9085b6381f6fb79"
-  integrity sha512-VnI7C9Fr3/RB/pRjRY3AZvJ1mctLHkTwH0soZsBtwSy59Jn46UpHMoYUJkpUkKJ6uN3zVTgrcFrzkNVQ0/I/5Q==
+"@carbon/ibmdotcom-web-components@^1.18.1":
+  version "1.18.1"
+  resolved "https://registry.yarnpkg.com/@carbon/ibmdotcom-web-components/-/ibmdotcom-web-components-1.18.1.tgz#225663164c7afa24ff1adae21017c5d4ce827053"
+  integrity sha512-+jPPtGnrE/wOPhj2uPbFLp4ztdMSZQ9EIaFCBW32xq8VE1jBF/er97TXrvAWcO05E8/R4H+f3SfjND8BK69g/A==
   dependencies:
-    "@carbon/ibmdotcom-services" "1.33.0"
+    "@carbon/ibmdotcom-services" "1.33.1"
     "@carbon/ibmdotcom-styles" "1.33.0"
-    "@carbon/ibmdotcom-utilities" "1.33.0"
+    "@carbon/ibmdotcom-utilities" "1.33.1"
     "@carbon/layout" "10.37.0"
     "@carbon/telemetry" "0.1.0"
     carbon-components "10.56.0"
