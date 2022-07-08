@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "@carbon/grid": "^10.15.0",
-    "@carbon/ibmdotcom-web-components": "^1.20.0",
+    "@carbon/ibmdotcom-web-components": "^1.20.1",
     "@carbon/type": "^10.13.0",
     "carbon-web-components": "^1.7.1",
     "lit-element": "^2.4.0",
